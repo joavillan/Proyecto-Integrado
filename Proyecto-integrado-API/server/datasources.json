@@ -1,0 +1,7 @@
+{
+  "db": {
+    "url": "mongodb+srv://admin:<password>@cluster0-vuwpg.mongodb.net/test?retryWrites=true&w=majority",
+    "name": "db",
+    "connector": "mongodb"
+  }
+}
