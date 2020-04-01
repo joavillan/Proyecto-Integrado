@@ -3,5 +3,11 @@
     "url": "mongodb+srv://admin:admin@cluster0-vuwpg.mongodb.net/test?retryWrites=true&w=majority",
     "name": "db",
     "connector": "mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./files"
   }
 }

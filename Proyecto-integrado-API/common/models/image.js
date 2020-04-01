@@ -5,7 +5,7 @@ module.exports = function(Image) {
    const fs = require('fs');
     Image.FileUpload = function(file,name, cb){
             console.log('fichero',file)
-            console.log('nombre',name)
+            console.log('nombreee',name)
         fs.writeFile('./files/images/'+name,file,'base64',function (err) {});
         cb(null,'ALGO'+name);
     }

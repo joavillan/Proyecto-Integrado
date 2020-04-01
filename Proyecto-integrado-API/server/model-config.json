@@ -41,7 +41,7 @@
     "public": true
   },
   "image": {
-    "dataSource": "db",
+    "dataSource": "storage",
     "public": true
   }
 }
