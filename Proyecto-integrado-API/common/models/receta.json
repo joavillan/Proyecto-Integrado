@@ -48,6 +48,9 @@
     "mgs": {
       "type": ["string"
       ]
+    },
+    "ncomen": {
+      "type": "number"
     }
   },
   "validations": [],
