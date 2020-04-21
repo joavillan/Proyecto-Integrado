@@ -38,6 +38,16 @@
           "iduser": "string"
         }
       ]
+    },
+    "fecha": {
+      "type": "string"
+    },
+    "mg": {
+      "type": "number"
+    },
+    "mgs": {
+      "type": ["string"
+      ]
     }
   },
   "validations": [],
