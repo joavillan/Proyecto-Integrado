@@ -38,7 +38,10 @@
   },
   "user": {
     "dataSource": "db",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "image": {
     "dataSource": "storage",
