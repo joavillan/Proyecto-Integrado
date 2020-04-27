@@ -8,7 +8,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='proyectointegradocw@gmail.com',
-    MAIL_PASSWORD='cspdirbajzsztdnx'
+    MAIL_PASSWORD='gzovzdhvrksqdcpo'
 )
 mail= Mail(app)
 
