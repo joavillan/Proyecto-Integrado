@@ -28,6 +28,9 @@
     "cuerpo": {
       "type": "string"
     },
+    "tags": {
+      "type": ["string"]
+    },
     "comentarios": {
       "type": [
         {
