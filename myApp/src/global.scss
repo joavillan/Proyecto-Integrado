@@ -24,3 +24,62 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.cuerpo{
+    background-color: rgb(255, 255, 255);
+}
+
+.icono {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.image {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.img {
+    width: 440px;
+    height: 320px;
+}
+
+.carta {
+    height: 560px;
+}
+
+.fondo{
+    /*background-image: url("https://previews.123rf.com/images/hatza/hatza1108/hatza110800006/10191855-comida-y-bebida-patr%C3%B3n-transparente.jpg");*/
+    background-color: white;
+}
+
+.texto{
+    overflow-wrap: break-word;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+@media(max-width: 767.98px) { 
+    .mobile {
+        display:none
+    }
+    .derecha{
+        padding-right: 150px;
+    }
+    .wi100{
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+}

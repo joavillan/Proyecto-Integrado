@@ -1,0 +1,106 @@
+<ion-content [fullscreen]="true">
+  <br>
+<div class="container">
+
+  <div class="col">
+
+    <!-- Titulo -->
+  <div class="row">
+    <div class="col-lg-8">
+      <h1><b>{{recetaPage.titulo}}</b></h1>
+    </div>
+    <div class="col-lg-2" *ngIf="rol == 'admin'">
+      <a routerLink="/EditarReceta/{{this.id}}" routerLinkActive="active">
+        <button class="btn btn-primary" type="button">Editar</button>
+      </a>
+    </div>
+    <div class="col-lg-2" *ngIf="rol == 'admin'">
+      <button class="btn btn-danger" type="button" (click)="eliminarReceta()">Eliminar</button>
+    </div>
+  </div>
+  <br>
+  
+  <!-- Subitulo -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>{{recetaPage.subtitulo}}</h3>
+    </div>
+  </div>
+  <br>
+
+  <!-- Cuerpo -->
+  <div class="row">
+    <div class="col-lg-12">
+      <p [innerHTML]="recetaPage.cuerpo" class="imag"></p>
+      <!--<p>{{recetaPage.cuerpo}}</p>-->
+    </div>
+  </div>
+  <br>
+  
+  <!-- Tags -->
+  <h4>Tags</h4>
+  <div class="row">
+    <div *ngFor='let tag of recetaPage.tags'>
+      <div class="">
+        <span class="badge badge-pill"  style="background-color: #880e4f;">{{tag}}</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div *ngIf="recetaPage.tags != null || recetaPage.tags != '' || recetaPage.tags != undefined">
+    <!--<h5>Tags</h5>
+    <hr>
+    
+  </div>
+  <hr>
+  <br>-->
+
+  <!-- Comentarios -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h4><b>Comentarios</b></h4>
+      <br>
+    </div>
+    <app-ngx-editor class="texto" [config]="config" 
+      [placeholder]="'Añade un mensaje aquí...'" [spellcheck]="true" [(ngModel)]="comentarioDummy">
+    </app-ngx-editor>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-2">
+      <button class="btn btn-success" type="button" (click)="Comentar()">Publicar</button>
+    </div>
+  </div>
+  <br>
+  
+  <div *ngFor="let comen of recetaPage.comentarios; let i = index; ">
+    <hr>
+    <div class="row">
+      <div class="col-lg-1">
+        <img src="{{comen.icono}}" class="rounded-circle z-depth-0 icono"
+        data-toggle="dropdown" alt="avatar image" height="35">
+      </div>
+      <div class="col-lg-11">
+        <h3>{{comen.nick}}</h3>
+      </div>
+      
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-9">
+        <p class="texto" [(innerHTML)]=comen.cuerpo>
+      </div>
+      <div class="col-lg-2" *ngIf="comen.id == idu || comen.userId == idu || rol == 'admin'">
+        <button class="btn btn-danger" type="button" (click)="Eliminar(i)">Eliminar</button>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  </div>
+  
+</div>
+</div>
+</ion-content>

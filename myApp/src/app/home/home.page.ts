@@ -30,7 +30,7 @@ export class HomePage {
     this.param.params.subscribe(event => {
       this.categoria = event.categoria;
      });
-    this.load()
+    this.load();
   }
 
   load(){
