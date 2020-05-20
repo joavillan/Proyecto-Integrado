@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="recetaPage">
   <br>
 <div class="container">
 
@@ -60,10 +60,16 @@
     <div class="col-lg-12">
       <h4><b>Comentarios</b></h4>
       <br>
+      <br>
+      <div class="md-form">
+        <textarea id="textarea-char-counter" class="form-control md-textarea" length="500" rows="3" [(ngModel)]="comentarioDummy"></textarea>
+        <label for="textarea-char-counter">Escribe tu comentario</label>
+      </div>
     </div>
     <!--<app-ngx-editor class="texto" [config]="config" 
       [placeholder]="'Añade un mensaje aquí...'" [spellcheck]="true" [(ngModel)]="comentarioDummy">
     </app-ngx-editor>-->
+    
   </div>
   <br>
   <div class="row">

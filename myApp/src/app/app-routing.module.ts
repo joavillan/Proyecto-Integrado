@@ -14,7 +14,11 @@ const routes: Routes = [
   },
   {
     path: 'Login',
-    component:LoginComponent
+    loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./Pages/settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
     path: '',
