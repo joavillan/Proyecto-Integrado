@@ -16,7 +16,7 @@ mail= Mail(app)
 def index():
    email = request.json['email']
    emailId = request.json['emailId']
-   link = 'http://localhost:4200/Verify/'+emailId
+   link = 'http://192.168.1.159:4200/Verify/'+emailId
    msg = Message('Verificación del correo electrónico en CookingWorld', sender = 'activate@cookingworld.com', recipients = [email])
    msg.body = f"Pulse en el siguiente link para verificar su correo electrónico. En el caso de no haberte registrado ignore este mensaje. {link}"
    mail.send(msg)

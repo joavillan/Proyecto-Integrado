@@ -19,14 +19,14 @@ export class LoginPage implements OnInit {
   constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit() {
-    if(localStorage.getItem('token')!=null){
+    /*if(localStorage.getItem('token')!=null){
       this.router.navigate(['/home/Ultimas']);
-    }
+    }*/
   }
 
   submit(){
     this.userService.loginUser(this.user);
-    this.router.navigate(['/Lista/Ultimas']);
+    this.router.navigate(['/home/Ultimas']);
   }
 
 }

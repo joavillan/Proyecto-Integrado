@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -24,6 +25,7 @@ import { SafePipe } from './Pipes/SafePipe';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     StatusBar,

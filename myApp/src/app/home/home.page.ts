@@ -24,6 +24,7 @@ export class HomePage {
   tpp = 10;
   recetaPage:RecetaModel;
   likeado:boolean;
+  term;
 
   ngOnInit() {
     //this.load();

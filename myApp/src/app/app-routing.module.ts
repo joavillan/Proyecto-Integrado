@@ -24,6 +24,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home/Ultimas',
     pathMatch: 'full'
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./Pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./Pages/logout/logout.module').then( m => m.LogoutPageModule)
   }
 ];
 

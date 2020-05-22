@@ -81,12 +81,12 @@ export class UserService {
         localStorage.removeItem('token');
         localStorage.removeItem('rol');
         console.log('Sesión cerrada');
-        window.location.reload();
+        //window.location.reload();
       },
       (error) => {
         console.log('error');
         localStorage.removeItem('token');
-        window.location.reload();
+        //window.location.reload();
     });
   }
 

@@ -1,9 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="false" style="background-color: #880e4f;">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="text-white">
+        Recetas
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,7 +16,7 @@
     <!--<input type="text" [(ngModel)]="term">
     <br>
     <br>-->
-    <!--<div class="row">
+    <div class="row">
         <div class="col-lg-6">
             <div class="md-form">
                 <i class="fas fa-search prefix"></i>
@@ -21,11 +24,11 @@
                 <label for="inputIconEx1">Barra de búsqueda</label>
             </div>
         </div>
-    </div>-->
+    </div>
 
     <div class="row">
 
-        <div class="col-lg-4" *ngFor="let receta of recetas; let i = index;">
+        <div class="col-lg-4" *ngFor="let receta of recetas |filter:term,let i = index;">
             
             <!-- Card Narrower -->
             <div class="card card-cascade narrower carta">

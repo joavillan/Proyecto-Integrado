@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-white">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <!-- Default form login -->
+      <form class="text-center border border-light p-5" action="#!">
+
+        <p class="h4 mb-4" *ngIf = "rol != 'admin'">Regístrate</p>
+        <p class="h4 mb-4" *ngIf = "rol == 'admin'">Registrar Administrador</p>
+
+        <!-- User -->
+        <input type="text" id="defaultLoginFormUser" class="form-control" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" placeholder="Nombre de usuraio">
+        <br>
+        <!-- Email -->
+        <input type="email" id="defaultLoginFormEmail" class="form-control" [(ngModel)]="mail" [ngModelOptions]="{standalone: true}" placeholder="Correo electrónico">
+        <br>
+        <!-- Password -->
+        <input type="password" id="defaultLoginFormPassword1" class="form-control mb-4" [(ngModel)]="pass1" [ngModelOptions]="{standalone: true}" placeholder="Contraseña">
+        <input type="password" id="defaultLoginFormPassword2" class="form-control mb-4" [(ngModel)]="pass2" [ngModelOptions]="{standalone: true}" placeholder="Repita la contraseña">
+        <br>
+        <!-- Sign in button -->
+        <button class="btn btn-info btn-block my-4" type="submit" (click)='submit()' *ngIf = "rol != 'admin'">Quiero ser un chef!</button>
+        <button class="btn btn-info btn-block my-4" type="submit" (click)='submit()' *ngIf = "rol == 'admin'">Crear admin</button>
+
+        <!-- Login -->
+        <p>¿Ya tienes una cuenta? 
+          <a routerLink="/Login">Entra</a>
+      </p>
+      </form>
+      <!-- Default form login -->
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+</ion-content>
