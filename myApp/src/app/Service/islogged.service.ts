@@ -15,7 +15,7 @@ export class IsloggedService implements CanActivate{
     //Comprobamos si existe token en local:
     if(token != null){
       if (this.auth.isAuthenticated()) {
-          this.router.navigate(['/Home']);
+          this.router.navigate(['/home/Ultimas']);
           bol = false;
       }
       bol = true;

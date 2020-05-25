@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecetaService } from '../Service/receta.service';
 import { RecetaModel } from '../Models/RecetaModel';
 import { UserService } from '../Service/user.service';
@@ -11,7 +11,7 @@ import { UserService } from '../Service/user.service';
 })
 export class HomePage {
 
-  constructor(private router:ActivatedRoute,private receta:RecetaService,private user:UserService, private param:ActivatedRoute) { }
+  constructor(private router:ActivatedRoute,private receta:RecetaService,private user:UserService, private param:ActivatedRoute,private routera:Router) { }
 
   idElim: any;
   idU: any;
@@ -28,6 +28,9 @@ export class HomePage {
 
   ngOnInit() {
     //this.load();
+    if(localStorage.getItem('token') == null || localStorage.getItem('token') == '' || localStorage.getItem('token') == undefined){
+      this.routera.navigate(['/Home']);
+    }
     this.param.params.subscribe(event => {
       this.categoria = event.categoria;
      });

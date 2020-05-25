@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { RecetaComponent } from './Components/receta/receta.component';
-import { LoginComponent } from './Components/login/login.component';
+import { AuthGuardService } from './Service/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'home/:categoria',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate:[AuthGuardService]
   },
   {
     path: 'Receta/:id',
-    loadChildren: () => import('./Pages/receta/receta.module').then( m => m.RecetaPageModule)
+    loadChildren: () => import('./Pages/receta/receta.module').then( m => m.RecetaPageModule),
+    canActivate:[AuthGuardService]
   },
   {
     path: 'Login',
@@ -18,11 +19,12 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    loadChildren: () => import('./Pages/settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () => import('./Pages/settings/settings.module').then( m => m.SettingsPageModule),
+    canActivate:[AuthGuardService]
   },
   {
     path: '',
-    redirectTo: 'home/Ultimas',
+    redirectTo: 'Login',
     pathMatch: 'full'
   },
   {
@@ -31,7 +33,8 @@ const routes: Routes = [
   },
   {
     path: 'logout',
-    loadChildren: () => import('./Pages/logout/logout.module').then( m => m.LogoutPageModule)
+    loadChildren: () => import('./Pages/logout/logout.module').then( m => m.LogoutPageModule),
+    canActivate:[AuthGuardService]
   }
 ];
 

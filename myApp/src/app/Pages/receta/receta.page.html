@@ -20,11 +20,11 @@
     <div class="col-lg-8">
       <h1><b>{{recetaPage.titulo}}</b></h1>
     </div>
-    <div class="col-lg-2" *ngIf="rol == 'admin'">
+    <!--<div class="col-lg-2" *ngIf="rol == 'admin'">
       <a routerLink="/EditarReceta/{{this.id}}" routerLinkActive="active">
         <button class="btn btn-primary" type="button">Editar</button>
       </a>
-    </div>
+    </div>-->
     <div class="col-lg-2" *ngIf="rol == 'admin'">
       <button class="btn btn-danger" type="button" (click)="eliminarReceta()">Eliminar</button>
     </div>
@@ -70,7 +70,6 @@
   <div class="row">
     <div class="col-lg-12">
       <h4><b>Comentarios</b></h4>
-      <br>
       <br>
       <div class="md-form">
         <textarea id="textarea-char-counter" class="form-control md-textarea" length="500" rows="3" [(ngModel)]="comentarioDummy"></textarea>
